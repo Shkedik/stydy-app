@@ -1,0 +1,160 @@
+.flex-container {
+  display: flex;
+  font-size: 16px;
+
+  .board {
+    width: 100%;
+    padding: 40px;
+
+    .radio-buttons {
+      width: 100%;  
+      
+      .radio-group {
+        
+        .radio-btns {
+          margin: 5px;
+        }
+      }
+    }
+
+    .buttons {        
+        .btn {
+          min-width: 100px;
+          height: 50px;
+          padding-right: 20px;
+        }
+      }
+    }
+
+  .boxes {
+
+    height: 600px;
+    border: 1px solid black;
+
+    .box {
+      text-align: center;
+      min-width: 150px;
+      min-height: 50px;
+      border: gray solid 1px;
+    }
+  }
+}
+  
+.pbt-20 {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.space-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+
+.center-align-items {
+  align-items: center;
+}
+
+.start-align-items {
+  align-items: flex-start;
+}
+
+.end-align-items {
+  align-items: flex-end;
+}
+
+.stretch-align-items {
+  align-items: stretch;
+}
+
+.center-justify-content {
+  justify-content: center;
+}
+
+.start-justify-content {
+  justify-content: flex-start;
+}
+
+.end-justify-content {
+  justify-content: flex-end;
+}
+
+.space-around-justify-content {
+  justify-content: space-around;
+}
+
+.space-between-justify-content {
+  justify-content: space-between;
+}
+
+.space-evenly-justify-content {
+  justify-content: space-evenly;
+}
+
+
+
+//align-items  выравнивание по горизонтали
+//justify-content расстояние элементы
+
+
+
+
+
+/*
+СВОЙСТВА ДЛЯ РОДИТЕЛЕЙ
+
+display : flex; -- определяет тип дисплея для всех его потомков
+
+flex-direction: row | row-resrve | column | column-reserve; -- устанавливает главную ось по которой будут располагаться гибкие элемент
+
+flex-wrap: nowrap | wrap | wrap-reverse; -- перенос активных элементов. По дефолту его нет
+
+flex-flow: column wrap; это сокращение от flex-direction и flex-wrap. по умолчинию row nowrap
+
+justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+помогает разместить элементы вдоль главной оси - горизонтальной. 
+
+В браузере могут не поддерживаться значения start, end лучше испольховать flex-start, flex-end.
+
+
+align-items: stretch | flex-start | flex-end | center ;
+размещение элементов вдоль поперечной оси-вертикальная
+stretch - дефолт, расстягивает элемент по контейнеру при соблюдении параметров min-width/max-width
+
+align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch ;
+выравнивание горизонтальных строк(если есть перенос) с элементами по вортикальной оси.
+работает только с wrap or wrap-reverse!!!!!
+
+
+СВОЙСТВА ДЛЯ ДЕТЕЙ
+
+order : управляет порядком, в котором дети появляются в контейнере (order: 5)
+
+flex-grow: 4; Только положительные числа. коэффициет показывает сколько пространства будет занимать элемент
+родительский элемент делится на равные доли, а данны ребенок будет занемать 4 доли, когда остальные по 1 
+
+flex-shrink: 3;  Только положительные числа. определяет способность гибкого элемента сжиматься по необходимости
+
+flex-basis:   0 | auto;  размер элемента по умолчанию до распределения оставшегося пространства.
+Если установлено значение 0, дополнительное пространство вокруг контента не учитывается. 
+Если установлено значение auto, дополнительное пространство распределяется на основе его значения flex-grow
+
+flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ] -- это сокращение для элементов использование - (0 1 auto)
+
+align-self: auto | flex-start | flex-end | center | baseline | stretch; 
+-- позволяет переопределить выравниевание по умолчанию(align-items) для отдельных элементов
+
+
+*/

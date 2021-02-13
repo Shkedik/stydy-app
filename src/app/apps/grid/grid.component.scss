@@ -1,0 +1,51 @@
+.main {
+
+  .buttons {
+    padding: 20px;
+
+    .btn {
+      min-width: 100px;
+      height: 50px;
+      padding-right: 20px;
+    }
+  }
+
+  .board {
+    padding: 20px;
+    display: grid;
+    grid-template-areas: 
+      "header header header"
+      "navbar menu settings"
+      "footer footer footer";
+    grid-template-rows: 100px 1fr 60px;
+    grid-template-columns: 20% 1fr 15%;
+    grid-gap: 2vw 2vw;
+    height: 100vh;
+
+    .box {
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+
+    .header {
+      grid-area: header;
+    }
+
+    .footer {
+      grid-area: footer;
+    }
+
+    .navbar {
+      grid-area: navbar;
+    }
+
+    .menu {
+      grid-area: menu;
+    }
+
+    .settings {
+      grid-area: settings;
+    }
+
+  }
+}

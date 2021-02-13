@@ -1,0 +1,58 @@
+<div class="flex-container">
+    
+  <div class="board pbt-20 column">
+    
+    <div class="buttons pbt-20 start-align-items">
+      <button mat-raised-button class="btn" [routerLink]="'/apps'">Back</button>
+    </div>
+
+    <div class="buttons pbt-20 space-around">
+      <button mat-raised-button class="btn" color="primary" (click)="add()">Add</button>
+      <button mat-raised-button class="btn" color="warn" (click)="remove('first')">Remove First</button>
+      <button mat-raised-button class="btn" color="warn" (click)="remove('last')">Remove Last</button>
+    </div>
+
+    <div [formGroup]="flexForm" class="radio-buttons pbt-20 space-around ">
+      <div class="radio-group column">
+        <mat-label>Layout Direction</mat-label>
+        <mat-radio-group class="radio-btns column" formControlName="direction">
+          <mat-radio-button value="row">row</mat-radio-button>
+          <mat-radio-button value="column">column</mat-radio-button>
+        </mat-radio-group>
+      </div>
+  
+      <div class="radio-group column">
+        <mat-label>Alignment in Layout Direction - Horizontal</mat-label>
+        <mat-radio-group class="radio-btns column" formControlName="horizontal">
+          <mat-radio-button *ngFor="let buttonAligmentHorizontal of buttonsAligmentHorizontal" [value]="buttonAligmentHorizontal">{{buttonAligmentHorizontal}}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+  
+      <div class="radio-group column">
+        <mat-label>Alignment in Perpendicular Direction - Vertical</mat-label>
+        <mat-radio-group class="radio-btns column" formControlName="vertical">
+          <mat-radio-button *ngFor="let buttonAligmentVertical of buttonsAligmentVertical" [value]="buttonAligmentVertical">{{buttonAligmentVertical}}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+
+    <div class="boxes pbt-20" 
+      [ngClass]="{'column': !row, 
+      'row': row,
+      'center-align-items': centerAI,
+      'start-align-items': startAI,
+      'end-align-items': endAI,
+      'stretch-align-items': stretch,
+      'start-justify-content': startJC,
+      'center-justify-content': centerJC,
+      'end-justify-content': endJC,
+      'space-around-justify-content': spaceAroundJC,
+      'space-between-justify-content': spaceBetweenJC,
+      'space-evenly-justify-content': spaseEvenlyJC
+      }">
+      <div class="box" *ngFor="let box of boxes">
+        <span>{{box.name}}</span>
+      </div>
+    </div>
+  </div>
+</div>
